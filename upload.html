@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wildlife Lens - Upload</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-camera-retro"></i>
+                <h1>Wildlife Lens</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="upload.html" class="active">Upload</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="upload-section">
+        <div class="container">
+            <h2>Share Your Wildlife Photos</h2>
+            <p class="subtitle">Upload your best wildlife shots to our growing collection</p>
+            
+            <form id="uploadForm" class="upload-form">
+                <div class="form-group">
+                    <label for="photoTitle">Photo Title</label>
+                    <input type="text" id="photoTitle" name="photoTitle" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="photographer">Your Name</label>
+                    <input type="text" id="photographer" name="photographer" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="species">Species (optional)</label>
+                    <input type="text" id="species" name="species">
+                </div>
+                
+                <div class="form-group">
+                    <label for="location">Location (optional)</label>
+                    <input type="text" id="location" name="location">
+                </div>
+                
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" name="description" rows="4"></textarea>
+                </div>
+                
+                <div class="form-group file-upload">
+                    <label for="photoUpload">Select Photo</label>
+                    <input type="file" id="photoUpload" name="photoUpload" accept="image/*" required>
+                    <div class="file-preview" id="filePreview">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>No file selected</p>
+                    </div>
+                </div>
+                
+                <div class="form-group checkbox">
+                    <input type="checkbox" id="termsAgree" name="termsAgree" required>
+                    <label for="termsAgree">I agree to the <a href="#">terms and conditions</a></label>
+                </div>
+                
+                <button type="submit" class="btn">Upload Photo</button>
+            </form>
+            
+            <div class="upload-guidelines">
+                <h3>Upload Guidelines</h3>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i> Only upload your own wildlife photographs</li>
+                    <li><i class="fas fa-check-circle"></i> Minimum resolution: 1920x1080 pixels</li>
+                    <li><i class="fas fa-check-circle"></i> Accepted formats: JPG, PNG, HEIC</li>
+                    <li><i class="fas fa-check-circle"></i> No heavily edited or manipulated images</li>
+                    <li><i class="fas fa-check-circle"></i> Respect wildlife - no staged or harmful shots</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Wildlife Lens</h3>
+                    <p>Dedicated to showcasing the beauty of wildlife through photography.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="upload.html">Upload</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-flickr"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Wildlife Lens. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="upload.js"></script>
+</body>
+</html>

@@ -1,28 +1,13 @@
 // Wildlife Photography Gallery Application
 class WildlifeGallery {
+  class WildlifeGallery {
   constructor() {
-    this.galleryData = [
-      {
-        id: 1,
-        title: "Majestic Lion",
-        photographer: "Sarah Johnson",
-        imageUrl: "https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
-        category: "mammals",
-        description: "A powerful male lion resting in the Serengeti.",
-        location: "Serengeti National Park, Tanzania",
-        species: "Panthera leo",
-        likes: 124,
-        date: "2023-05-15"
-      },
-      // ... (other gallery items with additional properties)
-    ];
-    
+    this.galleryData = JSON.parse(localStorage.getItem('wildlifeGallery')) || [];
     this.currentLimit = 8;
     this.initialize();
   }
 
   initialize() {
-    // Check which page we're on and initialize accordingly
     if (document.getElementById('previewGallery')) {
       this.displayGalleryItems('previewGallery', 4);
     }

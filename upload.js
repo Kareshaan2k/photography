@@ -103,24 +103,24 @@ class PhotoUploader {
     return true;
   }
 
-  simulateUpload(formData) {
-    // In a real application, replace this with actual fetch/axios call
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        const response = {
-          status: 'success',
-          message: 'Photo uploaded successfully',
-          data: {
-            id: Date.now(),
-            title: formData.get('photoTitle'),
-            photographer: formData.get('photographer'),
-            // Other fields would come from your backend
-          }
-        };
-        resolve(response);
-      }, 1500); // Simulate network delay
+  async uploadToBackend(formData) {
+  try {
+    const response = await fetch('https://your-api-endpoint.com/upload', {
+      method: 'POST',
+      body: formData,
+      // headers are automatically set by browser for FormData
     });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.message || 'Upload failed');
+    }
+
+    return await response.json();
+  } catch (error) {
+    throw error;
   }
+}
 
   showSuccessMessage() {
     // Create or show a success message element
